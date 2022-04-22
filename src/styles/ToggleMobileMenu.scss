@@ -1,0 +1,64 @@
+@use './vars';
+
+.ToggleMobileMenu {
+    width: 560px;
+    height: 610px;
+    padding: 24px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    background-color: white;
+    top: 60px;
+    bottom: 0;
+    border-radius: 6px;
+    border: 1px solid var(v-very-light-pink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    }
+.ToggleMobileMenu ul {
+ 	list-style: none;
+ 	padding: 0;
+ 	margin: 0;
+ }
+ .categories {
+     height: 50%;
+     font-size: var(--lg);
+     font-weight: bold;
+     line-height: 40px;
+ }
+ .categories a{
+     text-decoration: none;
+     color: black;
+ }
+ .account {
+     height: 25%;
+     font-size: var(--lg);
+     font-weight: bold;
+     display: flex;
+     align-items: center;
+     line-height: 40px;
+ }
+ .account a {
+    text-decoration: none;
+    color: black;
+ }
+ .signout {
+     height: 25%;
+     display: flex;
+     align-items: flex-end;
+     line-height: 35px;
+ }
+.signout a {
+    font-weight: bold;
+    color: var(--hospital-green)
+}
+ 
+
+ 
+
+@media (max-width: 640px) {
+	.ToggleMobileMenu {
+		width: 70%;
+	}
+}
