@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import {NavLink} from 'react-router-dom'
 import AppContext from "@context/AppContext";
 import MyOrder from "@containers/MyOrder";
 import Menu from "@components/Menu";
@@ -27,7 +28,9 @@ const Header = () => {
         />
         {toggleMobileMenu && <ToggleMobileMenu /> }
         <div className="navbar-left">
-          <img src={logo} alt="logo" className="nav-logo" href='/'/>
+          <NavLink to="/" className="linkHome">
+          <img src={logo} alt="logo" className="nav-logo"/>
+          </NavLink>
           <ul>
             <li>
               <a href="/">All</a>

@@ -16,6 +16,12 @@ nav {
 .nav-logo {
 	width: 100px;
 }
+.linkHome {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
 .navbar-left ul,
 .navbar-right ul {
 	list-style: none;

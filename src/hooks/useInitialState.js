@@ -4,7 +4,6 @@ const initialState = {
   cart: [],
   orderIsOpen: false,
   menuIsOpen: false,
-
 };
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
@@ -29,6 +28,7 @@ const useInitialState = () => {
     setState({
       ...state,
       orderIsOpen: !state.orderIsOpen,
+      menuIsOpen: false,
     });
   };
 
@@ -36,9 +36,18 @@ const useInitialState = () => {
     setState({
       ...state,
       menuIsOpen: !state.menuIsOpen,
+      orderIsOpen: false,
+
     });
   };
+  const toggles = () => {
+    setState({
+      ...state,
+      menuIsOpen: false,
+      orderIsOpen: false,
 
+    });
+  };
 
   return {
     state,
@@ -46,6 +55,7 @@ const useInitialState = () => {
     removeFromCart,
     toggleOrder,
     toggleMenu,
+    toggles
   };
 };
 

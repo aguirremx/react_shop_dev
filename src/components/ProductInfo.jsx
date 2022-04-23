@@ -8,6 +8,7 @@ const ProductInfo = ({product, info, setInfo}) => {
 
 	const handleClick = item => {
 		state.cart.includes(product) ? removeFromCart(item) : addToCart(item)
+		console.log(product)
 	}
 
 	return (
