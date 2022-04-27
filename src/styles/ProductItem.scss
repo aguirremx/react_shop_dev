@@ -9,6 +9,15 @@
 	border-radius: 20px;
 	object-fit: cover;
 }
+
+.categoryName {
+	padding: 2px 0;
+	font-size: var(--sm);
+	font-weight: bolder;
+	border-radius: 10px;
+	color: var(--hospital-green);
+}
+
 .product-info {
 	display: flex;
 	justify-content: space-between;

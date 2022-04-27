@@ -1,5 +1,16 @@
 @use './vars';
 
+.SectionMenu {
+    width: 375px;
+    height: 100%;
+    background-color: var(--black-opacity);
+    position: fixed;
+    left: 0;
+    top: 60px;
+    bottom: 0;
+
+}
+
 .ToggleMobileMenu {
     width: 560px;
     height: 610px;
@@ -7,14 +18,13 @@
     box-sizing: border-box;
     position: absolute;
     left: 0;
-    background-color: white;
-    top: 60px;
+    top: 0.01px;
     bottom: 0;
-    border-radius: 6px;
     border: 1px solid var(v-very-light-pink);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    background-color: white;
     }
 .ToggleMobileMenu ul {
  	list-style: none;

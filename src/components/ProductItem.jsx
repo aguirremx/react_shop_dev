@@ -6,23 +6,26 @@ import ProductInfo from "@components/ProductInfo";
 import "@styles/ProductItem.scss";
 
 const ProductItem = ({ product }) => {
-  const { state, addToCart, removeFromCart, toggles} = useContext(AppContext);
-	const [info, setInfo] = useState(false)
+  const { state, setState, addToCart, removeFromCart} = useContext(AppContext);
+  const [info, setInfo] = useState(false)
 
   const handleClick = item => {
 		state.cart.includes(product) ? removeFromCart(item) : addToCart(item)
 	}
-
-  const handleInfo = () => {
+  const HandleInfo = () => {
     setInfo(!info)
-    toggles()
+    setState({
+      ...state,
+      orderIsOpen: false,
+      menuIsOpen: false,
+    });
   }
 
   return (
     <div className="ProductItem">
-      <img src={product.images[0]} alt={product.title} onClick={() => handleInfo()} />
-      {info && <ProductInfo product={product} info={info} setInfo={setInfo} />}
-      
+      <img src={product.images[0]} alt={product.title} onClick={() => HandleInfo()} />
+      {info && <ProductInfo product={product} setInfo={setInfo} />}
+      <span className="categoryName">{product.category.name}</span>
       
       <div className="product-info">
         <div>

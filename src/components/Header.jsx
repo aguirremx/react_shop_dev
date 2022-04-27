@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import {NavLink} from 'react-router-dom'
 import AppContext from "@context/AppContext";
 import MyOrder from "@containers/MyOrder";
@@ -10,12 +10,12 @@ import shoppingCart from "@icons/icon_shopping_cart.svg";
 import "@styles/Header.scss";
 
 const Header = () => {
-  const { state, toggleOrder, toggleMenu } = useContext(AppContext);
-  const [toggleMobileMenu, setToggleMobileMenu] = useState(false)
+  const { state, toggleOrder, toggleMenu, toggleMobileMenu } = useContext(AppContext);
+  // const [toggleMobileMenu, setToggleMobileMenu] = useState(false)
 
-  const handleToggleMobileMenu = () => {
-    setToggleMobileMenu(!toggleMobileMenu)
-  }
+  // const handleToggleMobileMenu = () => {
+  //   setToggleMobileMenu(!toggleMobileMenu)
+  // }
 
   return (
     <>
@@ -24,9 +24,9 @@ const Header = () => {
         src={menu} 
         alt="menu" 
         className="menu"
-        onClick={() => handleToggleMobileMenu()}
+        onClick={() => toggleMobileMenu()}
         />
-        {toggleMobileMenu && <ToggleMobileMenu /> }
+        {state.mobileMenu && <ToggleMobileMenu /> }
         <div className="navbar-left">
           <NavLink to="/" className="linkHome">
           <img src={logo} alt="logo" className="nav-logo"/>

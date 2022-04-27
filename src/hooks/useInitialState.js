@@ -4,6 +4,7 @@ const initialState = {
   cart: [],
   orderIsOpen: false,
   menuIsOpen: false,
+  mobileMenu: false
 };
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
@@ -29,6 +30,8 @@ const useInitialState = () => {
       ...state,
       orderIsOpen: !state.orderIsOpen,
       menuIsOpen: false,
+      mobileMenu: false
+   
     });
   };
 
@@ -37,25 +40,28 @@ const useInitialState = () => {
       ...state,
       menuIsOpen: !state.menuIsOpen,
       orderIsOpen: false,
-
+ 
     });
   };
-  const toggles = () => {
+
+  const toggleMobileMenu = () => {
     setState({
       ...state,
-      menuIsOpen: false,
+      mobileMenu: !state.mobileMenu,
       orderIsOpen: false,
-
+ 
     });
   };
+
 
   return {
     state,
+    setState,
     addToCart,
     removeFromCart,
     toggleOrder,
     toggleMenu,
-    toggles
+    toggleMobileMenu
   };
 };
 
